@@ -1,0 +1,165 @@
+// style.scss
+
+// Variables
+$primary-color: #ff0a0a;
+$text-color: #333;
+$background-color: #f9f9f9;
+$white: #fff;
+$font-family: "pt-futura", Arial, sans-serif;
+
+// Fonts
+@font-face {
+  font-family: "pt-futura";
+  src: url("./fonts/FuturaPTBook.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $background-color;
+  padding: 20px;
+}
+
+// Header
+.header {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: 27px;
+    color: $primary-color;
+    text-transform: uppercase;
+  }
+}
+
+// Navigation
+.navigation {
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  justify-self: end;
+  gap: 20px;
+  list-style-type: none;
+
+  li {
+    margin-bottom: 15px;
+  }
+}
+
+.nav-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  font-family: $font-family;
+  color: #141313;
+  text-align: left;
+  padding: 0;
+  transition: color 0.5s;
+
+  &:hover {
+    color: #111111;
+  }
+
+  &.tg {
+    margin: 0 auto;
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+    background-color: $primary-color;
+    padding: 15px 100px;
+  }
+}
+
+// Main content
+.main {
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+// Content
+.content {
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 30px;
+  background: $white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+  &__title {
+    font-size: 1.5rem;
+    color: $primary-color;
+    margin-bottom: 15px;
+  }
+
+  &__content {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+// Footer
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #666;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .navigation {
+    width: 100%;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+
+    li {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Mixins (для будущего использования)
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
