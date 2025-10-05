@@ -163,3 +163,8 @@ body {
     @content;
   }
 }
+.footer-tech {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
