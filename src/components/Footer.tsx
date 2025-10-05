@@ -5,13 +5,13 @@ import viteLogo from "/vite.svg"; // Исправленный импорт
 export default function Footer() {
   return (
     <footer className="footer">
-      {footerData.map((el, index) =>
-        index === 0 ? (
-          <p key={index} id="footer__par">
+      {footerData.map((el) =>
+        el.id === 0 ? (
+          <p key={el.id} id="footer__par">
             <span>{new Date().getFullYear()}</span> &copy; {el.content}
           </p>
         ) : (
-          <p key={index} id="footer__par">
+          <p key={el.id} id="footer__par">
             {el.content}
           </p>
         )

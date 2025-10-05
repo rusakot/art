@@ -1,5 +1,5 @@
 export const headerData = [
-  { title: "Об авторе" },
-  { title: "Работы" },
-  { title: "Контакты" },
+  {id: 0, title: "Об авторе" },
+  {id: 1, title: "Работы" },
+  {id: 2, title: "Контакты" },
 ];
