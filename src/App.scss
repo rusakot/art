@@ -1,0 +1,171 @@
+// style.scss
+
+// Variables
+$primary-color: #ff0a0a;
+$text-color: #333;
+$background-color: #f9f9f9;
+$white: #fff;
+$font-family: "Montserrat", Arial, sans-serif;
+
+// Fonts
+
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $background-color;
+  padding: 15px;
+}
+
+// Header
+.header {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+
+  &--block {
+    display: flex;
+    justify-content: space-between;
+       @media (max-width: 468px) {
+      flex-direction: column;
+    }
+  }
+
+  &--title {
+    display: inline-block;
+    font-size: 27px;
+    color: $primary-color;
+    text-transform: uppercase;
+  }
+
+  &--nav {
+    justify-self: end;
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+}
+
+// header--nav
+.header--nav {
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.header--nav__item {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+
+  li {
+    margin-bottom: 15px;
+  }
+}
+
+.header--nav__btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  font-family: $font-family;
+  color: #141313;
+  text-align: left;
+  padding: 0;
+  transition: color 0.5s;
+
+  &.tg &:hover {
+    color: #111111;
+  }
+
+  &.tg {
+    margin: 0 auto;
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+    background-color: $primary-color;
+      padding: 
+    clamp(12px, calc(12px + (15 - 12) * (100vw - 150px) / (1300 - 150)), 15px)
+    clamp(20px, calc(20px + (150 - 20) * (100vw - 150px) / (1300 - 150)), 150px);
+  }
+}
+
+// Main content
+.main {
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+// Content
+.content {
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 30px;
+  background: $white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+  &__title {
+    font-size: 1.5rem;
+    color: $primary-color;
+    margin-bottom: 15px;
+  }
+
+  &__content {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+// Footer
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #666;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .header--nav__item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+
+    li {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Mixins (для будущего использования)
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+.footer-tech {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
